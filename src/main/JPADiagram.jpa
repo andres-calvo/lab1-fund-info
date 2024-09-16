@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.mycompany.proyecto" epkg="domain" v="6.1.0" rws="_17261858698532" Pws="_17261858698532" cws="_17261858698532" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_17261858698531" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="VehiculoPK" abs="false" class="Vehiculo" v="true" jbn="false" xre="false" m="false" rootElement="_17261858698531" id="_17261861165013">
+        <ts e="true">
+            <a>_17261861165604</a>
+            <a>_172618908754430</a>
+            <a>_172618909569931</a>
+            <a>_172618910427132</a>
+            <a>_172618866942124</a>
+        </ts>
+        <hc e="true">
+            <a>_17261861165604</a>
+        </hc>
+        <eq e="true">
+            <a>_17261861165604</a>
+        </eq>
+        <con am="PUBLIC" e="true">
+            <a>_17261861165604</a>
+            <a>_172618908754430</a>
+            <a>_172618909569931</a>
+            <a>_172618910427132</a>
+        </con>
+        <con am="PUBLIC" e="true"/>
+        <ath>Andres</ath>
+        <attributes>
+            <basic attribute-type="int" v="true" xvt="" name="precio" ft="false" id="_172618908754430">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <pz m="Valores positivos"/>
+                </bv>
+                <column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="foto" ft="true" id="_172618909569931">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="int" v="true" xvt="" name="anio" ft="false" id="_172618910427132">
+                <xwm/>
+                <xm/>
+                <bv>
+                    <po m="El a?o debe ser positivo"/>
+                </bv>
+                <column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </basic>
+            <one-to-one orp="false" optional="true" primaryKey="false" connected-entity-id="_172618814634512" connected-attribute-id="_172618866942123" v="true" xvt="" name="venta" id="_172618866942124">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_17261861165604">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Vehiculo.findAll">
+            <query>Select e from Vehiculo e</query>
+        </nq>
+        <nq e="false" name="Vehiculo.findByPrecio">
+            <query>Select v from Vehiculo v where v.precio=:precio</query>
+        </nq>
+        <nq e="false" name="Vehiculo.findByFoto">
+            <query>Select v from Vehiculo v where v.foto=:foto</query>
+        </nq>
+        <nq e="false" name="Vehiculo.findByAnio">
+            <query>Select v from Vehiculo v where v.anio=:anio</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ClientePK" abs="false" class="Cliente" v="true" jbn="false" xre="false" m="false" rootElement="_17261858698531" id="_17261861272106">
+        <ts e="true">
+            <a>_17261861272107</a>
+            <a>_172618986569136</a>
+            <a>_172618987004337</a>
+        </ts>
+        <hc e="true">
+            <a>_17261861272107</a>
+        </hc>
+        <eq e="true">
+            <a>_17261861272107</a>
+        </eq>
+        <con am="PUBLIC" e="true">
+            <a>_17261861272107</a>
+            <a>_172618986569136</a>
+            <a>_172618987004337</a>
+        </con>
+        <con am="PUBLIC" e="true"/>
+        <ath>Andres</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" ft="false" id="_172618986569136">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="documento" ft="false" id="_172618987004337">
+                <xwm/>
+                <xm/>
+                <column unique="true" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172618814634512" v="true" xvt="" name="ventas" id="_172618874498926">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_17261861272107">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Cliente.findAll">
+            <query>Select e from Cliente e</query>
+        </nq>
+        <nq e="false" name="Cliente.findByNombre">
+            <query>Select c from Cliente c where c.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Cliente.findByDocumento">
+            <query>Select c from Cliente c where c.documento=:documento</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="InventarioPK" abs="false" class="Inventario" v="true" jbn="false" xre="false" m="false" rootElement="_17261858698531" id="_17261881176369">
+        <ts e="true">
+            <a>_172618811763610</a>
+            <a>_172618859853119</a>
+        </ts>
+        <hc e="true">
+            <a>_172618811763610</a>
+        </hc>
+        <eq e="true">
+            <a>_172618811763610</a>
+        </eq>
+        <con am="PUBLIC" e="true"/>
+        <ath>Andres</ath>
+        <attributes>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_17261861165013" v="true" xvt="" name="vehiculoes" id="_172618859853119">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_172618811763610">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Inventario.findAll">
+            <query>Select e from Inventario e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyType="D" compositePrimaryKeyClass="VentaPK" abs="false" class="Venta" v="true" jbn="false" xre="false" m="false" rootElement="_17261858698531" id="_172618814634512">
+        <ts e="true">
+            <a>_172618814634513</a>
+            <a>_172618866942123</a>
+            <a>_172618889228928</a>
+        </ts>
+        <hc e="true">
+            <a>_172618814634513</a>
+        </hc>
+        <eq e="true">
+            <a>_172618814634513</a>
+        </eq>
+        <con am="PUBLIC" e="true">
+            <a>_172618814634513</a>
+        </con>
+        <con am="PUBLIC" e="true"/>
+        <ath>Andres</ath>
+        <attributes>
+            <many-to-one optional="true" primaryKey="true" connected-entity-id="_172618839906115" connected-attribute-id="_172618889229029" v="true" xvt="" name="empleado" id="_172618889228928">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="true" connected-entity-id="_17261861165013" connected-attribute-id="_172618866942124" v="true" xvt="" name="vehiculo" id="_172618866942123">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_172618814634513">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Venta.findAll">
+            <query>Select e from Venta e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="EmpleadoPK" abs="false" class="Empleado" v="true" jbn="false" xre="false" m="false" rootElement="_17261858698531" id="_172618839906115">
+        <ts e="true">
+            <a>_172618839906116</a>
+            <a>_172618931171833</a>
+            <a>_172618932913035</a>
+            <a>_172618889229029</a>
+        </ts>
+        <hc e="true">
+            <a>_172618839906116</a>
+        </hc>
+        <eq e="true">
+            <a>_172618839906116</a>
+        </eq>
+        <con am="PUBLIC" e="true">
+            <a>_172618839906116</a>
+            <a>_172618931171833</a>
+            <a>_172618932913035</a>
+        </con>
+        <con am="PUBLIC" e="true"/>
+        <ath>Andres</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" ft="false" id="_172618931171833">
+                <xwm/>
+                <xm/>
+                <column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="documento" ft="false" id="_172618932913035">
+                <xwm/>
+                <xm/>
+                <column unique="true" nullable="false" insertable="true" updatable="true"/>
+            </basic>
+            <one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_172618814634512" connected-attribute-id="_172618889228928" v="true" xvt="" name="ventas" id="_172618889229029">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_172618839906116">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Empleado.findAll">
+            <query>Select e from Empleado e</query>
+        </nq>
+        <nq e="false" name="Empleado.findByNombre">
+            <query>Select e from Empleado e where e.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Empleado.findByDocumento">
+            <query>Select e from Empleado e where e.documento=:documento</query>
+        </nq>
+    </entity>
+    <c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </c>
+    <wsl>
+        <ws n="Main" id="_17261858698532">
+            <i ref="_172618839906115" x="46" y="587"/>
+            <i ref="_17261861272106" x="507" y="575"/>
+            <i ref="_17261881176369" x="46" y="389"/>
+            <i ref="_17261861165013" x="46" y="135"/>
+            <i ref="_172618814634512" x="320" y="402"/>
+        </ws>
+    </wsl>
+</entity-mappings>
